@@ -913,3 +913,43 @@ footer {
         animation: none !important
     }
 }
+/* Content must remain visible at larger font sizes and intermediate widths. */
+.hero { height: auto; min-height: 740px; }
+.hero-inner { padding-bottom: 30px; }
+.hero-stats { margin-bottom: 20px; }
+.cards, .contact-grid, .split { min-width: 0; }
+.cards > *, .contact-grid > *, .split > * { min-width: 0; }
+.card-text { flex: 1; }
+.card-image { flex: none; }
+.card-text a { width: 44px; height: 44px; line-height: 42px; right: 18px; top: 18px; }
+input, select, textarea { font-size: 16px; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--lime); }
+.skip-link { position: fixed; top: 8px; left: 12px; z-index: 100; padding: 12px; background: var(--lime); color: var(--bg); transform: translateY(-160%); }
+.skip-link:focus { transform: translateY(0); }
+.contact-actions a[aria-current="true"] { box-shadow: 0 0 0 2px var(--lime); }
+.fallback-message { min-height: 190px; }
+.copy-request { margin-top: 12px; }
+#delivery-note { overflow-wrap: anywhere; }
+@media (min-width: 701px) and (max-width: 1000px) {
+    .cards { grid-template-columns: 1fr; }
+    .card { display: grid; grid-template-columns: 1fr 1fr; min-height: 260px; }
+    .card-text { padding-bottom: 28px; }
+    .card-image { min-height: 260px; }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+    .project-preview { position: relative; left: auto; top: auto; width: 80%; margin: 45px auto 0; }
+    .project-description { max-width: 540px; }
+}
+@media (max-width: 700px) {
+    .hero { min-height: 0; }
+    .hero-inner { padding-bottom: 44px; }
+    .hero-stats { margin: 60px 0 0; flex-wrap: wrap; }
+    .burger { width: 44px; height: 44px; }
+    .navrow nav a, .footer nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; }
+    .footer nav { flex-wrap: wrap; gap: 4px 18px; }
+    .contact-actions .btn, .contact-actions .outline { min-height: 44px; font-size: 12px; }
+    .card p, .intro, .section-top > p { font-size: 14px; }
+    .values p, .steps p { font-size: 13px; }
+    .project-preview { width: 95%; }
+}
+
+.copy-request { background: transparent; color: var(--white); cursor: pointer; }

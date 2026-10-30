@@ -17,15 +17,17 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Перейти к содержимому</a>
     <header class="header">
         <div class="wrap navrow"><a class="logo" href="#top">neKerek<span>.</span></a>
-            <nav id="menu"><a href="#services">Услуги</a><a href="#projects">Проекты</a><a href="#about">О нас</a><a
+            <nav id="menu" aria-label="Основная навигация"><a href="#services">Услуги</a><a href="#projects">Проекты</a><a href="#about">О нас</a><a
                     href="#contacts">Контакты</a></nav><span class="city">⌖ Алматы, Казахстан</span><a
                 class="btn headbtn" href="#contacts">Обсудить проект ↗</a><button class="burger" aria-controls="menu"
                 aria-expanded="false" aria-label="Открыть меню">☰</button>
         </div>
     </header>
     <main id="top">
+        <div id="main-content" tabindex="-1"></div>
         <section class="hero">
             <div class="hero-image"></div>
             <div class="wrap hero-inner">
@@ -55,7 +57,7 @@
                         <div class="card-text"><span class="num">01</span>
                             <h3>Лендинги</h3>
                             <p>Современные одностраничные сайты для презентации услуг, продуктов и привлечения заявок.
-                            </p><a href="#contacts" aria-label="Заказать лендинг">↗</a>
+                            </p><a href="#contacts" data-service="Лендинг" aria-label="Заказать лендинг">↗</a>
                         </div>
                         <div class="card-image img-landing">
                             <div class="phone"><b>Больше клиентов<br><em>для вашего бизнеса.</em></b></div>
@@ -65,7 +67,7 @@
                         <div class="card-text"><span class="num">02</span>
                             <h3>Корпоративные сайты</h3>
                             <p>Удобные и профессиональные сайты, которые помогают представить компанию в интернете.</p>
-                            <a href="#contacts" aria-label="Заказать корпоративный сайт">↗</a>
+                            <a href="#contacts" data-service="Корпоративный сайт" aria-label="Заказать корпоративный сайт">↗</a>
                         </div>
                         <div class="card-image img-building"></div>
                     </article>
@@ -73,7 +75,7 @@
                         <div class="card-text"><span class="num">03</span>
                             <h3>Дизайн и обновление сайтов</h3>
                             <p>Разрабатываем интерфейсы и улучшаем существующие сайты, уделяя внимание удобству и
-                                визуальному качеству.</p><a href="#contacts" aria-label="Заказать дизайн">↗</a>
+                                визуальному качеству.</p><a href="#contacts" data-service="Дизайн и обновление сайта" aria-label="Заказать дизайн">↗</a>
                         </div>
                         <div class="card-image img-design"></div>
                     </article>
@@ -160,8 +162,9 @@
                             в WhatsApp ↗</a><a class="outline" href="#request" data-channel="telegram">Telegram ↗</a><a
                             class="outline" href="#request" data-channel="email">Email ↗</a></div>
                 </div>
-                <form id="request"><label>Ваше имя<input name="name" placeholder="Ваше имя" required
-                            maxlength="80"></label><label>Телефон или Telegram<input name="contact"
+                <form id="request" aria-label="Заявка на разработку сайта">
+                    <label>Способ отправки<select name="channel"><option value="whatsapp">WhatsApp</option><option value="telegram">Telegram</option><option value="email">Email</option></select></label><label>Ваше имя<input name="name" autocomplete="name" placeholder="Ваше имя" required
+                            maxlength="80"></label><label>Телефон или Telegram<input name="contact" autocomplete="off"
                             placeholder="Телефон или Telegram" required maxlength="100"></label><label>Какой сайт вам
                         нужен?<select name="service" required>
                             <option value="">Выберите услугу</option>
@@ -169,11 +172,10 @@
                             <option>Корпоративный сайт</option>
                             <option>Дизайн и обновление сайта</option>
                             <option>Пока не знаю</option>
-                        </select></label><label>Краткое описание проекта<textarea name="message" rows="3"
+                        </select></label><label>Краткое описание проекта<textarea name="message" rows="3" maxlength="3000"
                             placeholder="Расскажите о проекте"></textarea></label><button class="btn"
                         type="submit">Подготовить заявку ↗</button>
-                    <p id="status" role="status" aria-live="polite"></p><small>Отправка выполняется через выбранный
-                        мессенджер или почту после настройки контактов.</small>
+                    <p id="status" role="status" aria-live="polite"></p><small><span id="delivery-note">Заявка не отправляется автоматически. Вы сможете проверить текст перед отправкой.</span></small>
                 </form>
             </div>
         </section>
@@ -181,7 +183,7 @@
     <footer>
         <div class="wrap footer"><a class="logo" href="#top">neKerek<span>.</span></a><small>Design. Development.
                 Digital experiences.</small>
-            <nav><a href="#services">Услуги</a><a href="#projects">Проекты</a><a href="#about">О нас</a><a
+            <nav aria-label="Навигация в подвале"><a href="#services">Услуги</a><a href="#projects">Проекты</a><a href="#about">О нас</a><a
                     href="#contacts">Контакты</a></nav><small>⌖ Алматы, Казахстан<br>© 2026 neKerek.</small>
         </div>
     </footer>
